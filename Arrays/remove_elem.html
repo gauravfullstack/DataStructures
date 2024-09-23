@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Element In Array</title>
+    <script>
+      function removeElement(nums, val) {
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] === val) {
+            nums.splice(i, 1);
+          }
+        }
+        return nums;
+      }
+
+      console.log(removeElement([5,3,2,3,7], 3))
+
+      //Optimize performance
+
+      function removeElementOpt(nums, val) {
+        let index = 0;
+
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] != val) {
+            nums[index] = nums[i];
+            index++;
+          }
+        }
+
+        return index;
+      }
+      console.log("output", removeElementOpt([0,1,2,2,3,0,4,2], 2));
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!-- 
+initially we assign 0 to index and then run a for loop
+then if index === val then it should replace the index with i 
+and then increase the index by one
+return 
+-->

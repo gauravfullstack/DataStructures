@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Check if it is Palindrome or not</title>
+
+    <script>
+      function palindromInt(int) {
+        int = int.toString();
+        split = int.split("");
+        reverse = split.reverse();
+        newArr = reverse.join("");
+
+        if (int === newArr) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      //   console.log(palindromInt(525));
+
+      function palindromInt(int, start = 0, end = null) {
+        // Convert the number to a string to easily work with characters
+        const numStr = int.toString();
+        
+        // Initialize 'end' to the last index of the string
+        if (end === null) {
+          end = numStr.length - 1;
+        }
+
+        // Base case: if the start index crosses the end index, it's a palindrome
+        if (start >= end) {
+          return true;
+        }
+
+        // If the characters at the current start and end do not match, it's not a palindrome
+        if (numStr[start] !== numStr[end]) {
+          return false;
+        }
+
+        // Recursive case: move inward, comparing the next pair of characters
+        return palindromInt(int, start + 1, end - 1);
+      }
+
+      console.log(palindromInt(525)); // true
+      console.log(palindromInt(12321)); // true
+      console.log(palindromInt(12345)); // false
+    </script>
+  </head>
+  <body></body>
+</html>

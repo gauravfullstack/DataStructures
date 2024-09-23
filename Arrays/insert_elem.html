@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert Element In Array on Selected Index</title>
+    <script>
+      function insertElement(nums, n, newNum) {
+        for (let i = nums.length - 1; i >= n; i--) {
+          if (i > n) {
+            nums[i + 1] = nums[i];
+          } else if (i = n) {
+            nums[i + 1] = nums[i];
+            nums[i] = newNum;
+          }
+        }
+        return nums;
+      }
+
+      console.log(insertElement([11, 21, 13, 41], 2, 33));
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!-- 
+This is very simple logic in which we just have to check the index where we want to insert and 
+then push on next index
+ but keep in mind that we have to do this in reverse loop as u seen -->

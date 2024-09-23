@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create Range of a Number</title>
+
+    <script>
+      function rangeOfNum(start, end) {
+        let newArr = [];
+        for (let i = start; i <= end; i++) {
+          newArr.push(i);
+        }
+        return newArr;
+      }
+      console.log(rangeOfNum(0, 5));
+
+      function rangeOfNum(start, end) {
+        if (start>end) return [];
+
+        const numbers = rangeOfNum(start, end-1);
+        numbers.push(end);
+        return numbers;
+      }
+      console.log(rangeOfNum(4, 9));
+    </script>
+  </head>
+  <body></body>
+</html>

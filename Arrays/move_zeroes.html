@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Move Zeroes in last from array</title>
+
+    <script>
+      function moveZeroes(nums) {
+        let i = 0;
+        for (let j = 0; j < nums.length; j++) {
+          if (nums[j] !== 0) {
+            temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            i++;
+          }
+        }
+        return nums;
+      }
+
+      console.log(moveZeroes([0,1,0,3,12]));
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!--
+we will take a variable index and assign value index = 0
+then, run a for loop for i = 0 and check if element === 0 
+if not then we have to store the value of index in temp and replace with j 
+after this the value of j is temp
+then increase the index by one
+then return outside the for loop
+ -->

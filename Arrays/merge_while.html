@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Merge Two Array</title>
+    <script>
+      function clickHandler(array, array2) {
+        let array3 = [];
+        d1 = 0;
+        d2 = 0;
+        d3 = 0;
+
+        while (d1 < array.length && d2 < array2.length) {
+          if (array[d1] < array2[d2]) {
+            array3[d3] = array[d1];
+            d1++;
+          } else {
+            array3[d3] = array2[d2];
+            d2++;
+          }
+          d3++;
+        }
+
+        while (d1 < array.length) {
+          array3[d3] = array[d1];
+          d1++;
+          d3++;
+        }
+
+        while (d2 < array2.length) {
+          array3[d3] = array2[d2];
+          d2++;
+          d3++;
+        }
+        return array3;
+      }
+
+      console.log(
+        clickHandler([12, 24, 25, 55, 90, 100, 420], [10, 14, 50, 120])
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

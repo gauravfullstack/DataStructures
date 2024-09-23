@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Finding Second Max value from an Array</title>
+
+    <script>
+      function findSecondMax(array) {
+        let uniqueArray = Array.from(new Set(array));
+        uniqueArray.sort((a, b) => {
+          return b - a;
+        });
+
+        let maxVal;
+        if (uniqueArray.length >= 2) {
+          let maxVal = uniqueArray[1];
+          console.log(maxVal);
+        }
+      }
+
+      findSecondMax([12, 56, 25, 24, 56, 55]);
+
+      //Optimized function to calculate second max
+
+      function findSecondMaxOptimized(array) {
+        let maxVal = -Infinity;
+        let secondMaxVal = -Infinity;
+
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] > maxVal) {
+            maxVal = array[i];
+          } else if (array[i] != maxVal && array[i] > secondMaxVal) {
+            secondMaxVal = array[i];
+          }
+        }
+        console.log(secondMaxVal);
+
+      }
+      findSecondMaxOptimized([12, 56, 25, 24, 56, 55]);
+    </script>
+  </head>
+  <body></body>
+</html>

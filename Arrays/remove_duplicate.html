@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Removing Duplicates element from an Array</title>
+
+    <script>
+      function removeDuplicates(array) {
+        for (let index = 0; index < array.length-1; index++) {
+          if (array[index] === array[index + 1]) {
+            array.splice(index + 1, 1);
+            index--;
+          }
+        }
+
+        console.log("newArray", array);
+      }
+
+      removeDuplicates([1, 2, 2, 4, 4, 6, 8, 8, 9]);
+
+      //Optimized code for removing duplicates
+
+      function removeDuplicatesOptimized(array) {
+        let i = 0;
+        for (let j = 1; j < array.length; j++) {
+          if (array[i] !== array[j]) {
+            i++; 
+            array[i] = array[j];
+          }
+        }
+        return array;
+
+
+      }
+      console.log("newArrayOptimised", removeDuplicatesOptimized([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+      
+    </script>
+  </head>
+  <body></body>
+</html>

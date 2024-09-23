@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reverse a string</title>
+
+    <script>
+      function reverseStr(str) {
+        if (str === "") {
+          return "";
+        } else return reverseStr(str.substr(1)) + str.charAt(0);
+      }
+      console.log(reverseStr("string"));
+    </script>
+  </head>
+  <body></body>
+</html>

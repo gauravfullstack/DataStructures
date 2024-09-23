@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Element In Array on Selected Index</title>
+    <script>
+      function deleteElem(nums, n) {
+        for (let index = n; index < nums.length; index++) {
+          nums[index] = nums[index + 1];
+        }
+        nums.length = nums.length - 1;
+        return nums;
+      }
+
+      console.log(deleteElem([11, 21, 33, 13, 41], 2));
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!-- 
+set a for loop starting from the index which have to delete 
+so that we can replace the first element by next and 
+then make sure to reduce the length of array by one
+ -->

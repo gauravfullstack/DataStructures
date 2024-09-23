@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finding Subsets using BackTracking Algo</title>
+    <script>
+      function findSubsets(nums) {
+        let result = [];
+        let temp = [];
+        function recursive(nums, i) {
+          if (i === nums.length) {
+            return result.push([...temp]);
+          }
+          temp.push(nums[i]);
+          recursive(nums, i + 1);
+          temp.pop();
+          recursive(nums, i + 1);
+        }
+        recursive(nums, 0);
+        return result;
+      }
+      console.log(findSubsets([1, 2, 3]));
+    </script>
+  </head>
+  <body></body>
+</html>

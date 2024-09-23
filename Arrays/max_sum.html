@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Finding Max Sum of an Array</title>
+
+    <script>
+      function findMaxSum(array) {
+        let maxSum = array[0];
+        let startIdx = 0;
+        let endIdx = 0;
+
+        for (let index = 0; index < array.length; index++) {
+          currentSum = 0;
+          for (let j = index; j < array.length; j++) {
+            currentSum += array[j];
+            if (currentSum > maxSum) {
+              maxSum = currentSum;
+              startIdx = index;
+              endIdx = j;
+            }
+          }
+        }
+        return {
+          sum: maxSum,
+          subArray: array.slice(startIdx, endIdx + 1),
+        };
+      }
+
+      console.log(findMaxSum([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+      //Keden's algorithm for calculating the sum of the arrat
+
+      function findMaxSumOpt(array) {
+        let maxSum = array[0];
+        let sum = 0;
+
+        for (let index = 0; index < array.length; index++) {
+          sum = sum + array[index];
+          if (sum > maxSum) {
+            maxSum = sum;
+          }
+          if (sum < 0) {
+            sum = 0;
+          }
+        }
+        return maxSum;
+      }
+
+      console.log("opt", findMaxSumOpt([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+    </script>
+  </head>
+  <body></body>
+</html>

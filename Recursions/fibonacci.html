@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fibonacci Series</title>
+
+    <script>
+      function fib(num) {
+        let array = [0, 1];
+        for (let i = 2; i <= num; i++) {
+          array.push(array[i - 2] + array[i - 1]);
+        }
+        return array[num];
+      }
+      console.log(fib(5));
+
+      function fibRecursion(num) {
+       if (num<=1) return num;
+       return fibRecursion(num-1) + fibRecursion(num-2);
+      }
+      console.log(fibRecursion(5));
+    </script>
+  </head>
+  <body></body>
+</html>
