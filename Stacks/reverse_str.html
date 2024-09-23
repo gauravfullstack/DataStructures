@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const reverseWords = function (str) {
+        let splitStr = str.split(" ");
+        let stack = [];
+
+        for (let i of splitStr) {
+          stack.push(i);
+        }
+
+        let finalStr = "";
+
+        while (stack.length) {
+          const current = stack.pop();
+
+          if (current) {
+            finalStr = finalStr + " " + current;
+          }
+        }
+        console.log(finalStr);
+
+        return finalStr.trim();
+      };
+
+      reverseWords("the sky is blue");
+      reverseWords("     the sky is     blue");
+      reverseWords("a good     example  ");
+    </script>
+  </head>
+  <body></body>
+</html>
