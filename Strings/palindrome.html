@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Check Palindrome or not</title>
+    <script>
+        const isPalindrome = function (x) {
+            return x<0 ? false : x === +x.toString().split("").reverse().join("");
+        }
+
+        const res = isPalindrome(1281);
+        console.log(res)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
