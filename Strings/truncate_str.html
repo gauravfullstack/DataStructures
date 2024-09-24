@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Truncate a string</title>
+    <script>
+        function truncate(str, maxlength) {
+            if (str.length > maxlength) {
+                return str.slice(0, maxlength) + "..."
+            } else return str
+        }
+
+        console.log(truncate("Subscribe to my channel", 9))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
