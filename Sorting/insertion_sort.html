@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Insertion Sort</title>
+    <script>
+      function insertionSort(nums) {
+        let i, current, j;
+        for (let i = 1; i < nums.length; i++) {
+          current = nums[i];
+          j = i - 1;
+          while (j >= 0 && nums[j] > current) {
+            nums[j + 1] = nums[j];
+            j--;
+          }
+          nums[j + 1] = current;
+        }
+        return nums;
+      }
+
+      console.log(insertionSort([29, 10, 14, 37, 14, 33, 8, 11]));
+    </script>
+  </head>
+  <body></body>
+</html>
