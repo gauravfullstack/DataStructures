@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Selection Sort</title>
+    <script>
+      function selectionSort(nums) {
+        for (let i = 0; i < nums.length - 1; i++) {
+          let minIndex = i;
+          for (let j = i + 1; j < nums.length; j++) {
+            if (nums[j] < nums[minIndex]) {
+              minIndex = j;
+            }
+          }
+
+          if (minIndex !== i) {
+            [nums[i], nums[minIndex]] = [nums[minIndex], nums[i]];
+          }
+        }
+        return nums;
+      }
+
+      console.log(selectionSort([29, 10, 14, 37, 14]));
+    </script>
+  </head>
+  <body></body>
+</html>
